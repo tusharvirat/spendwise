@@ -1,0 +1,108 @@
+.tx-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color .2s;
+}
+.tx-row:hover { border-color: var(--muted); }
+
+.tx-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.tx-info { flex: 1; min-width: 0; }
+
+.tx-desc {
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tx-meta {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.tx-cat-badge {
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tx-amount {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.tx-amount.exp { color: var(--danger); }
+.tx-amount.inc { color: var(--accent3); }
+
+.tx-actions { display: flex; gap: 4px; flex-shrink: 0; }
+
+.tx-list { display: flex; flex-direction: column; gap: 6px; }
+
+/* Filters bar */
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.filter-chip {
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--muted);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  cursor: pointer;
+  transition: all .18s;
+  white-space: nowrap;
+}
+.filter-chip:hover { color: var(--text); border-color: var(--muted); }
+.filter-chip.active { background: var(--card); color: var(--text); border-color: var(--muted); }
+
+/* Type toggle for modal */
+.type-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.type-btn {
+  flex: 1; padding: 9px;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.type-btn.active-exp { background: #2a1010; color: var(--danger); }
+.type-btn.active-inc { background: #0a1e12; color: var(--accent3); }
+
+/* Modal form grid */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.form-full { grid-column: 1 / -1; }
+@media (max-width: 500px) { .form-grid-2 { grid-template-columns: 1fr; } .form-full { grid-column: 1; } }
