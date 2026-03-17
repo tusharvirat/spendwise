@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Line, Bar, Doughnut } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -6,7 +6,7 @@ import {
   BarElement, ArcElement, Title, Tooltip, Legend, Filler,
 } from 'chart.js';
 import api from '../utils/api';
-import { formatCurrency, MONTHS, CAT_COLORS } from '../utils/helpers';
+import { formatCurrency, monthLabel, MONTHS, CAT_COLORS } from '../utils/helpers';
 import StatCard from '../components/dashboard/StatCard';
 import CategoryBar from '../components/reports/CategoryBar';
 import { toast } from 'react-toastify';
