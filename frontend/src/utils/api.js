@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: process.env.REACT_APP_API_URL || 'https://spendwise-w82p.onrender.com/api',
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -26,3 +26,6 @@ api.interceptors.response.use(
 );
 
 export default api;
+
+
+
